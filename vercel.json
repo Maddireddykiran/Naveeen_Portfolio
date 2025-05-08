@@ -39,9 +39,5 @@
   "env": {
     "VERCEL": "1",
     "NODE_ENV": "production"
-  },
-  "kv": {
-    "title": "Portfolio KV Store",
-    "description": "KV storage for portfolio content and settings"
   }
 } 
