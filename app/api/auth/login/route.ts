@@ -10,22 +10,14 @@ export async function POST(request: Request) {
     const { username, password } = await request.json();
 
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      // Get hostname to determine the domain for cookie
-      const requestUrl = request.url || '';
-      const hostname = new URL(requestUrl).hostname;
-      
-      // Determine if we should use secure cookies based on hostname or environment
-      const isSecure = process.env.NODE_ENV === 'production' || 
-                       hostname !== 'localhost';
-      
       // Create session (in a real app, use a proper JWT or session token)
       const cookieStore = cookies();
       cookieStore.set('admin_session', 'true', {
         httpOnly: true,
-        secure: isSecure,
+        secure: process.env.NODE_ENV === 'production',
         maxAge: 60 * 60 * 24, // 1 day
         path: '/',
-        sameSite: 'lax' // Changed from 'strict' to work better across redirects
+        sameSite: 'strict'
       });
 
       // Set no-cache headers
