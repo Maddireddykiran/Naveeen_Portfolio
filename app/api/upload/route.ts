@@ -29,51 +29,64 @@ export async function POST(request: Request) {
       );
     }
     
-    // Generate a unique filename
+    // Generate a unique filename with timestamp to avoid caching issues
+    const timestamp = new Date().getTime();
     const fileExtension = fileType.split('/')[1];
-    const filename = `${uuidv4()}.${fileExtension}`;
+    const filename = `${uuidv4()}_${timestamp}.${fileExtension}`;
     
-    let publicPath = `/uploads/${filename}`;
-    
-    // Skip actual file writing in production/Vercel, as it will fail
+    // In production (Vercel), we can't save files to the filesystem
+    // Instead, return a dummy URL that client can use temporarily
+    // In a real app, you'd use a proper image storage service like AWS S3, Cloudinary, etc.
     if (isProduction || isVercel) {
-      console.log(`Production environment detected - skipping file write for: ${filename}`);
+      // For Vercel deployment, just return a success response with a predictable path
+      // The front-end will display the uploaded image but it won't persist on server restart
       
-      // Return a success response with just the path
-      return NextResponse.json({ 
-        success: true, 
-        filePath: publicPath,
-        note: "File upload simulated in production environment"
+      // Return path with timestamp to avoid browser cache issues
+      const dummyPath = `/uploads/${filename}`;
+      
+      console.log('In production mode - Simulating file upload for:', filename);
+      
+      return NextResponse.json({
+        success: true,
+        filePath: dummyPath,
+        note: "File handling simulated in production environment",
       });
     }
     
-    // For development, actually write the file
-    const uploadsDir = join(process.cwd(), 'public', 'uploads');
-    const filepath = join(uploadsDir, filename);
-    
-    // Ensure uploads directory exists
+    // For development environment, save the file locally
     try {
-      await mkdir(uploadsDir, { recursive: true });
-    } catch (err) {
-      console.log('Uploads directory already exists or could not be created');
+      // Ensure uploads directory exists
+      const uploadsDir = join(process.cwd(), 'public', 'uploads');
+      await mkdir(uploadsDir, { recursive: true }).catch(() => {
+        console.log('Uploads directory already exists');
+      });
+      
+      const filepath = join(uploadsDir, filename);
+      
+      // Convert file to ArrayBuffer and then to Buffer
+      const arrayBuffer = await file.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      
+      // Save file
+      await writeFile(filepath, new Uint8Array(buffer));
+      
+      const publicPath = `/uploads/${filename}`;
+      
+      return NextResponse.json({
+        success: true,
+        filePath: publicPath
+      });
+    } catch (error) {
+      console.error('Error saving file locally:', error);
+      return NextResponse.json(
+        { error: 'Failed to save file' },
+        { status: 500 }
+      );
     }
-    
-    // Convert file to ArrayBuffer and then to Buffer
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    
-    // Save file
-    await writeFile(filepath, new Uint8Array(buffer));
-    
-    return NextResponse.json({ 
-      success: true, 
-      filePath: publicPath 
-    });
-    
   } catch (error) {
-    console.error('Error uploading file:', error);
+    console.error('Error processing upload:', error);
     return NextResponse.json(
-      { error: 'Failed to upload file' },
+      { error: 'Failed to process upload' },
       { status: 500 }
     );
   }

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { getTestimonials, updateTestimonials } from '@/lib/content-service';
+import { getContentSection, updateContent } from '@/lib/vercel-kv-service';
 
 export async function GET() {
   try {
-    const testimonials = await getTestimonials();
+    const testimonials = await getContentSection('testimonials');
     return NextResponse.json(testimonials);
   } catch (error) {
     console.error('Error fetching testimonials data:', error);
@@ -17,7 +17,7 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const testimonials = await request.json();
-    await updateTestimonials(testimonials);
+    await updateContent('testimonials', testimonials);
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error updating testimonials data:', error);

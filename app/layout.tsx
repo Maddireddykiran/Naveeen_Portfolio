@@ -1,32 +1,29 @@
-import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import type { PropsWithChildren } from "react";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { siteConfig } from '@/config';
+import '@/app/globals.css';
+import { ThemeProvider } from './provider';
+import { initKVStore } from '@/lib/vercel-kv-service';
 
-import { siteConfig } from "@/config";
+// Initialize Vercel KV Store on app start
+initKVStore().catch(console.error);
 
-import { ThemeProvider } from "./provider";
-
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
-
-export const viewport: Viewport = {
-  themeColor: "#000319",
-  colorScheme: "dark",
-};
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = siteConfig;
 
-const RootLayout = ({ children }: Readonly<PropsWithChildren>) => {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`min-h-screen ${inter.className}`}>
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
-          {children}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
