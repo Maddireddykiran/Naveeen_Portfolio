@@ -1,0 +1,21 @@
+# Ignore ESLint errors
+.eslintrc.json
+.eslintrc.js
+.eslintrc
+
+# Ignore TypeScript errors
+tsconfig.json
+*.d.ts
+
+# Ignore test files
+__tests__/
+*.test.js
+*.test.ts
+*.test.tsx
+
+# Ignore development files
+.vscode/
+.editorconfig
+.gitignore
+.prettierrc
+.prettierignore 

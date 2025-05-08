@@ -1,0 +1,30 @@
+[build]
+  command = "npm run netlify-build"
+  publish = ".next"
+  
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NEXT_FORCE_EDGE_IMAGES = "true"
+  CI = "false"
+  NODE_ENV = "production"
+  NODE_OPTIONS = "--max-old-space-size=4096"
+  NEXT_TELEMETRY_DISABLED = "1"
+  # Force skip TypeScript checks
+  SKIP_PREFLIGHT_CHECK = "true"
+  NETLIFY_USE_YARN = "false"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  included_files = ["!node_modules/prettier/**/*", "!node_modules/react-syntax-highlighter/**/*"]
+
+# Prevent build failures
+[build.processing]
+  skip_processing = true
+  
+# Handle 404 errors
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 

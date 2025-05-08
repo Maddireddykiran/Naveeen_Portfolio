@@ -1,0 +1,28 @@
+{
+  "mainText": "As a Senior Manager at Deloitte Digital, I specialize in transforming legacy systems into cutting-edge digital platforms, leveraging AI, ML, and automation to streamline operations and enhance user experiences. With a passion for innovation, I lead multidisciplinary teams that deliver scalable, high-impact solutions for Government and Public Sector clients across the nation.",
+  "conclusionText": "I thrive at the intersection of technology, strategy, and execution, ensuring that digital transformation efforts drive measurable impact and long-term success.",
+  "expertiseItems": [
+    {
+      "icon": "FaRegLightbulb",
+      "title": "Digital Transformation",
+      "description": "From modernizing paper-based workflows to implementing enterprise-wide digital strategies."
+    },
+    {
+      "icon": "FaRobot",
+      "title": "AI & ML-Driven Solutions",
+      "description": "Integrating AI-powered automation, predictive analytics, and intelligent decision-making."
+    },
+    {
+      "icon": "FaLink",
+      "title": "Seamless System Integrations",
+      "description": "Designing and overseeing complex technology integrations, ensuring interoperability."
+    },
+    {
+      "icon": "FaBuilding",
+      "title": "Public Sector Leadership",
+      "description": "Providing strategic guidance to help organizations navigate large-scale digital initiatives."
+    }
+  ],
+  "profileImage": "/Profile.jpg",
+  "jobTitle": "Senior Manager at Deloitte Digital"
+}

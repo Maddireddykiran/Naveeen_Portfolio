@@ -1,0 +1,293 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "AEM - AI-Powered Content Management System",
+      "des": "An AEM-based content management system integrated with AI for automated content tagging, recommendation, and personalization.",
+      "img": "/Pro.jpg",
+      "iconLists": [
+        "/aem.svg",
+        "/restfulapi.svg",
+        "/genai.svg"
+      ],
+      "link": "https://aem-ai-cms.netlify.app",
+      "sourceCode": "https://github.com/user/aem-ai-cms"
+    },
+    {
+      "id": 2,
+      "title": "AI-Powered Personalized Content Delivery System",
+      "des": "An AI-driven system built with AEM that dynamically personalizes content delivery based on user preferences and behavior.",
+      "img": "/Pro2.jpg",
+      "iconLists": [
+        "/next.svg",
+        "/tail.svg",
+        "/ts.svg",
+        "/stream.svg",
+        "/c.svg"
+      ],
+      "link": "https://ai-content-delivery.netlify.app",
+      "sourceCode": "https://github.com/user/ai-content-delivery"
+    },
+    {
+      "id": 3,
+      "title": "AEM + AI Chatbot Integration",
+      "des": "A fully integrated chatbot system within AEM that leverages AI to provide instant responses, support, and content recommendations.",
+      "img": "/Pro3.jpg",
+      "iconLists": [
+        "/re.svg",
+        "/tail.svg",
+        "/ts.svg",
+        "/three.svg",
+        "/c.svg"
+      ],
+      "link": "https://aem-ai-chatbot.netlify.app",
+      "sourceCode": "https://github.com/user/aem-ai-chatbot"
+    },
+    {
+      "id": 4,
+      "title": "AI Content Moderation System for AEM",
+      "des": "An AI-powered content moderation tool integrated with AEM to automatically filter inappropriate content and ensure compliance.",
+      "img": "/Pro4.jpg",
+      "iconLists": [
+        "/next.svg",
+        "/tail.svg",
+        "/ts.svg",
+        "/three.svg",
+        "/gsap.svg"
+      ],
+      "link": "https://ai-content-moderation.netlify.app",
+      "sourceCode": "https://github.com/user/ai-content-moderation"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Specialist Leader",
+      "company": "Deloitte Digital",
+      "period": "2018 - Present (7+ years)",
+      "location": "Los Angeles",
+      "desc": "Leading digital transformation initiatives, implementing AI & ML solutions for Government and Public Sector clients.",
+      "skills": [
+        "Adobe Experience Manager",
+        "AI/ML Integration",
+        "Digital Transformation"
+      ],
+      "thumbnail": "https://assets.channelinsider.com/uploads/2022/03/CI.Profile.Deloitte.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Lead AEM Developer",
+      "company": "Adobe",
+      "period": "Mar 2017 - Oct 2017 (6 months)",
+      "location": "New York City",
+      "desc": "Served as Technical Account Manager and Lead Developer for enterprise AEM implementations.",
+      "skills": [
+        "AEM",
+        "RESTful Services",
+        "Technical Leadership"
+      ],
+      "thumbnail": "https://images.credly.com/images/6975ffc1-5e18-4a37-96de-845dcd47e888/blob.png"
+    },
+    {
+      "id": 3,
+      "title": "AEM Developer",
+      "company": "Florida Department of Environmental Protection",
+      "period": "2015 - 2017",
+      "location": "Florida",
+      "desc": "Implemented AEM solutions and RESTful services for state environmental protection systems.",
+      "skills": [
+        "AEM",
+        "RESTful Services",
+        "Government Systems"
+      ],
+      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/30/Florida_Department_of_Environmental_Protection_logo.png"
+    },
+    {
+      "id": 4,
+      "title": "Sr. Adobe LiveCycle Consultant",
+      "company": "Deloitte",
+      "period": "2014 - 2015",
+      "location": "Pennsylvania",
+      "desc": "Provided expert consulting for Adobe LiveCycle implementations and integrations.",
+      "skills": [
+        "Adobe LiveCycle",
+        "System Integration",
+        "Consulting"
+      ],
+      "thumbnail": "https://assets.channelinsider.com/uploads/2022/03/CI.Profile.Deloitte.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Adobe LiveCycle SME",
+      "company": "Motorola Solutions",
+      "period": "2015",
+      "location": "Illinois",
+      "desc": "Served as Subject Matter Expert for Adobe LiveCycle implementations.",
+      "skills": [
+        "Adobe LiveCycle",
+        "Enterprise Solutions"
+      ],
+      "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_kQkZ6OvI3nxgfM99VKqlHFlhsW_6UuOANvyi86sa8NB1w=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": 6,
+      "title": "Adobe LiveCycle Consultant",
+      "company": "Various Organizations",
+      "period": "2010 - 2014",
+      "location": "Multiple Locations",
+      "desc": "Consulted for CIT/Genesys10, CGI, Meritiv Financial, and State Farm Insurance on Adobe LiveCycle implementations.",
+      "skills": [
+        "Adobe LiveCycle",
+        "Consulting",
+        "Enterprise Systems"
+      ],
+      "thumbnail": "https://cdn-icons-png.flaticon.com/512/1651/1651105.png"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Collaborating wit Naveen Vanam was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Naveen Vanam's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand,  is the ideal partner.",
+      "name": "Michael Johnson",
+      "title": "Employee of Deolite Technologie"
+    },
+    {
+      "quote": "Collaborating with Naveen Vanam was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Naveen Vanam's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Naveen Vanam is the ideal partner.",
+      "name": "samuel",
+      "title": "Employee of Adobe Technologies"
+    },
+    {
+      "quote": "Collaborating with Naveen Vanam was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Naveen Vanam's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Naveen Vanam is the ideal partner.",
+      "name": "John Smith",
+      "title": "Employee of Florida Department of Environmental Protection"
+    }
+  ],
+  "socialMedia": [
+    {
+      "name": "GitHub",
+      "img": "/git.svg",
+      "link": "https://github.com/Kiran7112"
+    },
+    {
+      "name": "Twitter",
+      "img": "/twit.svg",
+      "link": "https://naveen.twitter.com"
+    },
+    {
+      "name": "LinkedIn",
+      "img": "/link.svg",
+      "link": "https://www.linkedin.com/in/nvanam"
+    }
+  ],
+  "techStack": {
+    "categories": [
+      {
+        "title": "Enterprise Platforms",
+        "skills": [
+          "Adobe Experience Manager (AEM)",
+          "Adobe LiveCycle",
+          "Adobe LiveCycle Designer"
+        ]
+      },
+      {
+        "title": "Programming",
+        "skills": [
+          "Python",
+          "Java",
+          "Java EE",
+          "SQL",
+          "XML",
+          "Web Development"
+        ]
+      },
+      {
+        "title": "AI & Integration",
+        "skills": [
+          "Machine Learning",
+          "Artificial Intelligence",
+          "RESTful Services",
+          "SOAP",
+          "Web Services"
+        ]
+      }
+    ],
+    "additionalSkills": [
+      "SOA",
+      "Android",
+      "Agile Methodologies",
+      "SDLC",
+      "Software Development",
+      "Databases",
+      "Requirements Analysis",
+      "Spring",
+      "Consulting",
+      "Oracle",
+      "Business Analysis"
+    ]
+  },
+  "approach": [
+    {
+      "title": "Planning & Strategy",
+      "phase": "Phase 1",
+      "description": "As an AEM Technical Architect, I'll lead the planning phase to establish enterprise-grade digital experiences. We'll define AI-driven strategies and innovative solutions tailored to your business needs."
+    },
+    {
+      "title": "Deployment & Progress Update",
+      "phase": "Phase 2",
+      "description": "I'll architect robust AEM solutions while integrating AI capabilities. Through iterative development and continuous integration, I'll ensure seamless progress and technical excellence."
+    },
+    {
+      "title": "Development & Launch",
+      "phase": "Phase 3",
+      "description": "Leveraging my expertise in AEM and AI, I'll deliver cutting-edge digital solutions. From deployment to optimization, I'll ensure maximum performance and scalability."
+    }
+  ],
+  "footer": {
+    "cta": {
+      "heading": "Ready to take your digital presence to the next level?",
+      "subtext": "Reach out to me today and let's discuss how I can help your achieve your goals.",
+      "buttonText": "Let's get in touch",
+      "buttonLink": "mailto:naveen@example.com"
+    },
+    "copyright": {
+      "name": "Naveen Vanam",
+      "link": "#"
+    }
+  },
+  "gridItems": [],
+  "hero": {
+    "professionTitle": "AI & AUTOMATION EXPERT | SENIOR MANAGER AT DELOITTE DIGITAL",
+    "heading": "Crafting Intelligent Digital Experiences with AI",
+    "description": "Hi, I'm Naveen, a Senior Manager and AI expert specializing in digital transformation using AI, ML, and Adobe Experience Manager (AEM). I build intelligent, scalable platforms that modernize legacy systems and enhance user experiences.",
+    "ctaText": "Contact Me",
+    "ctaLink": "#contact",
+    "image": "/profile.jpg"
+  },
+  "about": {
+    "mainText": "As a Senior Manager at Deloitte Digital, I specialize in transforming legacy systems into cutting-edge digital platforms, leveraging AI, ML, and automation to streamline operations and enhance user experiences. With a passion for innovation, I lead multidisciplinary teams that deliver scalable, high-impact solutions for Government and Public Sector clients across the nation.",
+    "closingText": "I thrive at the intersection of technology, strategy, and execution, ensuring that digital transformation efforts drive measurable impact and long-term success.",
+    "expertiseItems": [
+      {
+        "icon": "FaRegLightbulb",
+        "title": "Digital Transformation",
+        "description": "From modernizing paper-based workflows to implementing enterprise-wide digital strategies."
+      },
+      {
+        "icon": "FaRobot",
+        "title": "AI & ML-Driven Solutions",
+        "description": "Integrating AI-powered automation, predictive analytics, and intelligent decision-making."
+      },
+      {
+        "icon": "FaLink",
+        "title": "Seamless System Integrations",
+        "description": "Designing and overseeing complex technology integrations, ensuring interoperability."
+      },
+      {
+        "icon": "FaBuilding",
+        "title": "Public Sector Leadership",
+        "description": "Providing strategic guidance to help organizations navigate large-scale digital initiatives."
+      }
+    ],
+    "profileImage": "/Profile.jpg",
+    "jobTitle": "Senior Manager at Deloitte Digital"
+  }
+}
