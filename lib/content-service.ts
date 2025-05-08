@@ -1,6 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
+// Helper to determine if running in production (Vercel)
+const isProduction = process.env.NODE_ENV === 'production';
+const isVercel = process.env.VERCEL === '1';
+
+// In-memory cache for production to avoid filesystem issues
+let contentCache: ContentData | null = null;
+
 const contentFilePath = path.join(process.cwd(), 'data', 'content.json');
 
 interface Hero {
@@ -56,8 +63,32 @@ interface ContentData {
   gridItems: any[];
 }
 
+// Initialize the cache in production
+async function initializeCache() {
+  if ((isProduction || isVercel) && !contentCache) {
+    try {
+      const data = await fs.promises.readFile(contentFilePath, 'utf8');
+      contentCache = JSON.parse(data) as ContentData;
+      console.log('Content cache initialized');
+    } catch (error) {
+      console.error('Error initializing content cache:', error);
+      throw new Error('Failed to initialize content cache');
+    }
+  }
+}
+
 // Read the full content data
 export async function getContentData(): Promise<ContentData> {
+  // For production/Vercel, use the cache
+  if (isProduction || isVercel) {
+    // Initialize cache if it's not already
+    if (!contentCache) {
+      await initializeCache();
+    }
+    return contentCache as ContentData;
+  }
+  
+  // For development, read from file
   try {
     const data = await fs.promises.readFile(contentFilePath, 'utf8');
     return JSON.parse(data) as ContentData;
@@ -70,11 +101,22 @@ export async function getContentData(): Promise<ContentData> {
 // Update the content file with new data
 export async function updateContentData(newData: ContentData): Promise<void> {
   try {
-    await fs.promises.writeFile(
-      contentFilePath,
-      JSON.stringify(newData, null, 2),
-      'utf8'
-    );
+    // Update both the cache (for production) and the file (for development)
+    if (isProduction || isVercel) {
+      contentCache = newData;
+    }
+    
+    // Still attempt to write to file (works in development, may fail silently in production)
+    try {
+      await fs.promises.writeFile(
+        contentFilePath,
+        JSON.stringify(newData, null, 2),
+        'utf8'
+      );
+    } catch (e) {
+      console.warn('Could not write to file system. This is expected in production.');
+      // Don't throw error here, as we've updated the cache
+    }
   } catch (error) {
     console.error('Error updating content data:', error);
     throw new Error('Failed to update content data');

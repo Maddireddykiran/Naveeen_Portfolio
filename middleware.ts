@@ -17,8 +17,28 @@ export function middleware(request: NextRequest) {
   if (isAdminPath || isApiAuthPath || isApiContentPath || isApiUploadPath) {
     const adminSession = request.cookies.get('admin_session');
     
+    // Better cookie validation logic
+    const isValidSession = adminSession && adminSession.value === 'true';
+    
+    // Enhanced logging for debugging in production
+    if (!isValidSession) {
+      console.log(`Access denied to ${path}. No valid session found.`);
+    }
+    
     // If no session cookie or it's not valid, redirect to login
-    if (!adminSession || adminSession.value !== 'true') {
+    if (!isValidSession) {
+      // Special handling for API routes in production - Return 401 instead of redirect
+      if ((isApiContentPath || isApiUploadPath) && process.env.NODE_ENV === 'production') {
+        return new NextResponse(
+          JSON.stringify({ error: 'Unauthorized' }),
+          { 
+            status: 401,
+            headers: { 'content-type': 'application/json' }
+          }
+        );
+      }
+      
+      // For normal web routes, redirect to login
       const url = new URL('/admin/login', request.url);
       url.searchParams.set('redirect', path);
       return NextResponse.redirect(url);

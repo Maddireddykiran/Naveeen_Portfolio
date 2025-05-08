@@ -36,6 +36,8 @@ const nextConfig = {
       },
     ],
   },
+  // Add output setting for optimal deployment on Vercel
+  output: 'standalone',
 }
 
 module.exports = nextConfig 
